@@ -2,26 +2,23 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Leaf, ShoppingCart, ScanLine } from "lucide-react";
 import heroImage from "@/assets/hero-agriculture.jpg";
-
 const Index = () => {
   const navigate = useNavigate();
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative h-screen">
         <img src={heroImage} alt="Agriculture" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/70" />
         <div className="relative h-full flex items-center justify-center text-center px-4">
           <div className="max-w-4xl space-y-6 animate-harvest text-white">
-            <h1 className="text-6xl md:text-7xl font-bold">AgroConnect</h1>
+            <h1 className="text-6xl md:text-7xl font-bold">Farmlytics</h1>
             <p className="text-2xl md:text-3xl">Your Smart Agriculture Ecosystem</p>
             <p className="text-lg md:text-xl opacity-90">Connecting Farmers, Users, and Wholesalers</p>
             <div className="flex gap-4 justify-center pt-8">
               <Button size="lg" variant="secondary" onClick={() => navigate("/auth")} className="text-lg">
                 Get Started
               </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate("/auth")} className="text-lg border-white text-white hover:bg-white/20">
+              <Button size="lg" variant="outline" onClick={() => navigate("/auth")} className="text-lg border-white hover:bg-white/20 text-slate-950">
                 Sign In
               </Button>
             </div>
@@ -52,8 +49,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
