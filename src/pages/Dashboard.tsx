@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { LogOut, Leaf, ShoppingCart, ScanLine, TrendingUp, Users } from "lucide-react";
+import { LogOut, Leaf, ShoppingCart, ScanLine, TrendingUp, Users, MessageSquare, UserSearch } from "lucide-react";
 import plantDiagnosisIcon from "@/assets/plant-diagnosis-icon.png";
 import marketplaceIcon from "@/assets/marketplace-icon.png";
 interface Profile {
@@ -73,20 +73,22 @@ const Dashboard = () => {
             image: marketplaceIcon,
             action: () => navigate("/marketplace")
           }, {
+            title: "Community Forum",
+            description: "Connect with other farmers and wholesalers",
+            icon: MessageSquare,
+            action: () => navigate("/community")
+          }, {
+            title: "User Directory",
+            description: "Find and connect with farmers and wholesalers",
+            icon: UserSearch,
+            action: () => navigate("/directory")
+          }, {
             title: "Market Analysis",
             description: "View real-time market trends and prices",
             icon: TrendingUp,
             action: () => toast({
               title: "Coming soon!",
               description: "Market analysis feature"
-            })
-          }, {
-            title: "Community",
-            description: "Connect with other farmers and wholesalers",
-            icon: Users,
-            action: () => toast({
-              title: "Coming soon!",
-              description: "Community feature"
             })
           }]
         };
@@ -101,20 +103,22 @@ const Dashboard = () => {
             image: marketplaceIcon,
             action: () => navigate("/marketplace")
           }, {
+            title: "Community Forum",
+            description: "Connect with farmers",
+            icon: MessageSquare,
+            action: () => navigate("/community")
+          }, {
+            title: "Find Farmers",
+            description: "Search and connect with suppliers",
+            icon: UserSearch,
+            action: () => navigate("/directory")
+          }, {
             title: "Market Analysis",
             description: "Analyze supply and demand trends",
             icon: TrendingUp,
             action: () => toast({
               title: "Coming soon!",
               description: "Market analysis feature"
-            })
-          }, {
-            title: "Connect with Farmers",
-            description: "Build relationships with suppliers",
-            icon: Users,
-            action: () => toast({
-              title: "Coming soon!",
-              description: "Community feature"
             })
           }]
         };
@@ -135,13 +139,15 @@ const Dashboard = () => {
             image: plantDiagnosisIcon,
             action: () => navigate("/diagnosis")
           }, {
-            title: "Community",
+            title: "Community Forum",
             description: "Connect with farmers and learn",
-            icon: Users,
-            action: () => toast({
-              title: "Coming soon!",
-              description: "Community feature"
-            })
+            icon: MessageSquare,
+            action: () => navigate("/community")
+          }, {
+            title: "Find Farmers",
+            description: "Search and connect with local farmers",
+            icon: UserSearch,
+            action: () => navigate("/directory")
           }]
         };
     }

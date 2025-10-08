@@ -9,6 +9,10 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import PlantDiagnosis from "./pages/PlantDiagnosis";
 import Marketplace from "./pages/Marketplace";
+import Community from "./pages/Community";
+import Profile from "./pages/Profile";
+import Messages from "./pages/Messages";
+import UserDirectory from "./pages/UserDirectory";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/diagnosis" element={<ProtectedRoute><PlantDiagnosis /></ProtectedRoute>} />
           <Route path="/marketplace" element={<ProtectedRoute><Marketplace /></ProtectedRoute>} />
+          <Route path="/community" element={<ProtectedRoute><Community /></ProtectedRoute>} />
+          <Route path="/profile/:userId" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/messages" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
+          <Route path="/directory" element={<ProtectedRoute><UserDirectory /></ProtectedRoute>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
