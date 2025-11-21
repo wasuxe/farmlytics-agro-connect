@@ -46,7 +46,7 @@ const Auth = () => {
       if (error) throw error;
 
       toast({
-        title: "Welcome to AgroConnect!",
+        title: "Welcome to Farmlytics!",
         description: "Your account has been created successfully.",
       });
       navigate("/dashboard");
@@ -96,7 +96,7 @@ const Auth = () => {
         />
         <div className="absolute inset-0 bg-primary/80 flex items-center justify-center p-12">
           <div className="text-center text-white space-y-4">
-            <h1 className="text-5xl font-bold">AgroConnect</h1>
+            <h1 className="text-5xl font-bold">Farmlytics</h1>
             <p className="text-xl">Connecting Farmers, Users, and Wholesalers</p>
             <p className="text-lg opacity-90">Your smart agriculture ecosystem</p>
           </div>

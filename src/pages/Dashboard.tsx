@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { LogOut, Leaf, ShoppingCart, ScanLine, TrendingUp, Users, MessageSquare, UserSearch } from "lucide-react";
 import plantDiagnosisIcon from "@/assets/plant-diagnosis-icon.png";
 import marketplaceIcon from "@/assets/marketplace-icon.png";
+import { SaathiAI } from "@/components/SaathiAI";
 interface Profile {
   role: "farmer" | "user" | "wholesaler";
   full_name: string;
@@ -86,10 +87,7 @@ const Dashboard = () => {
             title: "Market Analysis",
             description: "View real-time market trends and prices",
             icon: TrendingUp,
-            action: () => toast({
-              title: "Coming soon!",
-              description: "Market analysis feature"
-            })
+            action: () => navigate("/market-analysis")
           }]
         };
       case "wholesaler":
@@ -116,10 +114,7 @@ const Dashboard = () => {
             title: "Market Analysis",
             description: "Analyze supply and demand trends",
             icon: TrendingUp,
-            action: () => toast({
-              title: "Coming soon!",
-              description: "Market analysis feature"
-            })
+            action: () => navigate("/market-analysis")
           }]
         };
       default:
@@ -160,10 +155,13 @@ const Dashboard = () => {
             <h1 className="text-2xl font-bold text-primary">Farmlytics</h1>
             <p className="text-sm text-muted-foreground">Welcome, {profile?.full_name}</p>
           </div>
-          <Button variant="outline" onClick={handleSignOut}>
-            <LogOut className="w-4 h-4 mr-2" />
-            Sign Out
-          </Button>
+          <div className="flex gap-2">
+            <SaathiAI />
+            <Button variant="outline" onClick={handleSignOut}>
+              <LogOut className="w-4 h-4 mr-2" />
+              Sign Out
+            </Button>
+          </div>
         </div>
       </header>
 

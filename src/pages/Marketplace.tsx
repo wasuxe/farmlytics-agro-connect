@@ -6,8 +6,9 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, Plus, Search, ShoppingCart } from "lucide-react";
+import { ArrowLeft, Search, ShoppingCart } from "lucide-react";
 import marketplaceIcon from "@/assets/marketplace-icon.png";
+import { AddProductDialog } from "@/components/AddProductDialog";
 
 interface Product {
   id: string;
@@ -65,10 +66,7 @@ const Marketplace = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>
-          <Button onClick={() => toast({ title: "Coming soon!", description: "Add product feature" })}>
-            <Plus className="w-4 h-4 mr-2" />
-            Add Product
-          </Button>
+          <AddProductDialog onProductAdded={fetchProducts} />
         </div>
       </header>
 

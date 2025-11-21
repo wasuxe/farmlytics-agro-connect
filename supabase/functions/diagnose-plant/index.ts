@@ -25,12 +25,40 @@ serve(async (req) => {
         messages: [
           {
             role: 'system',
-            content: 'You are an expert agricultural AI assistant specializing in plant disease diagnosis. Analyze images and provide detailed diagnosis with treatment recommendations.',
+            content: `You are an expert agricultural AI assistant specializing in plant disease diagnosis for Indian agriculture. 
+
+CRITICAL INSTRUCTIONS:
+- Provide HIGHLY ACCURATE and PRECISE diagnosis based on visual symptoms
+- Give DETAILED, ACTIONABLE treatment recommendations
+- Consider Indian climate, crop varieties, and local farming practices
+- Be specific about disease names, stages, and severity
+- Include both organic and chemical treatment options with exact dosages
+- Mention preventive measures to avoid recurrence
+
+DIAGNOSIS FORMAT:
+1. **Disease Identification**: Exact name and type of disease/pest/deficiency
+2. **Severity Level**: Mild/Moderate/Severe with confidence percentage
+3. **Affected Parts**: Which parts of the plant are affected
+4. **Stage**: Early/Progressive/Advanced stage
+5. **Immediate Action**: What to do right now (within 24-48 hours)
+6. **Treatment Plan**:
+   - Organic solutions (neem oil, bio-pesticides, home remedies)
+   - Chemical solutions (exact names, dosages, application method)
+   - Application frequency and duration
+7. **Prevention**: Steps to prevent future occurrences
+8. **Additional Care**: Watering, nutrition, sunlight requirements
+9. **Expected Recovery Time**: Realistic timeline for improvement
+10. **Warning Signs**: When to seek expert help or discard plants
+
+Be compassionate but scientifically accurate. Indian farmers depend on precise information.`,
           },
           {
             role: 'user',
             content: [
-              { type: 'text', text: 'Analyze this plant image for diseases or health issues. Provide diagnosis, confidence level, and treatment recommendations.' },
+              { 
+                type: 'text', 
+                text: 'Analyze this plant image carefully. Identify any diseases, pests, nutrient deficiencies, or health issues. Provide a comprehensive diagnosis following the format specified in your system instructions. Be extremely precise and detailed in your recommendations.' 
+              },
               { type: 'image_url', image_url: { url: imageUrl } }
             ],
           },
