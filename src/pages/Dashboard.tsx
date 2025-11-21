@@ -7,7 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { LogOut, Leaf, ShoppingCart, ScanLine, TrendingUp, Users, MessageSquare, UserSearch } from "lucide-react";
 import plantDiagnosisIcon from "@/assets/plant-diagnosis-icon.png";
 import marketplaceIcon from "@/assets/marketplace-icon.png";
-import { SaathiAI } from "@/components/SaathiAI";
+import { VoiceSaathiAI } from "@/components/VoiceSaathiAI";
 interface Profile {
   role: "farmer" | "user" | "wholesaler";
   full_name: string;
@@ -155,13 +155,10 @@ const Dashboard = () => {
             <h1 className="text-2xl font-bold text-primary">Farmlytics</h1>
             <p className="text-sm text-muted-foreground">Welcome, {profile?.full_name}</p>
           </div>
-          <div className="flex gap-2">
-            <SaathiAI />
-            <Button variant="outline" onClick={handleSignOut}>
-              <LogOut className="w-4 h-4 mr-2" />
-              Sign Out
-            </Button>
-          </div>
+          <Button variant="outline" onClick={handleSignOut}>
+            <LogOut className="w-4 h-4 mr-2" />
+            Sign Out
+          </Button>
         </div>
       </header>
 
@@ -189,6 +186,8 @@ const Dashboard = () => {
         })}
         </div>
       </main>
+      
+      <VoiceSaathiAI />
     </div>;
 };
 export default Dashboard;
